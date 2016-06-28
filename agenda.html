@@ -1,0 +1,484 @@
+<!doctype html>
+<html ng-app="ps14agendaApp" >
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+	<link rel="shortcut icon" href="/static/images/favicon.ico">
+
+    <link href="/static/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="/static/css/print.css" media="print" rel="stylesheet" type="text/css">
+    <!--[if lte IE 8]>
+      <link href="/static/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <![endif]-->
+
+	
+	<title>
+  AppDirect Partner Summit 2014 - Agenda
+</title>
+	
+	<script src="//code.jquery.com/jquery.min.js"></script>
+	<script src="/static/js/vendor/modernizr.js"></script>
+	<script src="/static/js/vendor/angular.js"></script>
+	<script type="text/javascript" src="//use.typekit.net/gcb3nqm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body class="agenda" ng-controller="AgendaCtrl" >
+	
+  <section class="banner">
+    <h3>2014 AppDirect Partner Summit</h3>
+    <h4>September 23rd, 24th and 25th, San Francisco</h4>
+  </section>
+  <header class="page-header">
+    <svg version="1.1" id="header-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       viewBox="0 0 110 64" enable-background="new 0 0 110 64" xml:space="preserve" width="110" height="64">
+    <path fill="#454c52" d="M45.6,9.6c-12.4,5.2-18.1,19.6-12.9,31.9s19.6,18.1,31.9,12.9s18.1-19.6,12.9-31.9
+      C72.3,10.1,58,4.3,45.6,9.6z M39.4,16.9c-0.6,4.3-0.4,8.8,0.5,13.2l-6.6,2.8C33.1,27,35.3,21.2,39.4,16.9z M35.1,40.5
+      c-0.7-1.6-1.2-3.3-1.4-4.9l6.9-2.9c0.5,1.6,1,3.2,1.7,4.8s1.4,3.1,2.3,4.6l-6.9,2.9C36.6,43.6,35.7,42.1,35.1,40.5z M39.3,47
+      l6.6-2.8c2.5,3.7,5.6,6.9,9.1,9.5C49.1,53.7,43.4,51.3,39.3,47z M62.4,52.5c-1.1,0.4-2.2,0.7-3.4,0.9c-4.2-2.6-7.9-6-10.8-10.2
+      l8.6-3.7L62.4,52.5z M55.9,37.1l-9,3.8c-0.9-1.4-1.6-3-2.3-4.5c-0.7-1.6-1.2-3.2-1.7-4.8l9-3.8L55.9,37.1z M50.9,25.4l-8.6,3.7
+      c-1-5-0.9-10,0.1-14.8c0.9-0.7,1.9-1.3,3-1.8L50.9,25.4z M70.9,17l-6.6,2.8c-2.5-3.7-5.6-6.9-9.1-9.5C61.1,10.2,66.8,12.7,70.9,17z
+       M47.8,11.4c1.1-0.4,2.2-0.7,3.4-0.9c4.2,2.6,7.9,6,10.8,10.2l-8.6,3.7L47.8,11.4z M54.3,26.8l9-3.8c0.9,1.4,1.6,3,2.3,4.5
+      s1.2,3.2,1.7,4.8l-9,3.8L54.3,26.8z M59.3,38.5l8.6-3.7c1,5,0.9,10-0.1,14.8c-0.9,0.7-1.9,1.3-3,1.8L59.3,38.5z M70.8,47
+      c0.6-4.3,0.4-8.8-0.5-13.2l6.6-2.8C77.1,37,74.9,42.8,70.8,47z M69.7,31.3c-0.5-1.6-1-3.2-1.7-4.8c-0.7-1.6-1.4-3.1-2.3-4.6l6.9-2.9
+      c1,1.3,1.9,2.8,2.5,4.4s1.2,3.3,1.4,4.9L69.7,31.3z M36.5,57.2l0.9-0.4c0.1,0.5,0.4,1,1,1.4c0.5,0.3,0.9,0.2,1,0
+      c0.5-0.7-2.2-1.7-1.3-3.3c0.4-0.7,1.4-0.9,2.4-0.3c0.7,0.4,1.1,1,1.2,1.6l-0.9,0.3c-0.1-0.5-0.5-1-0.9-1.2c-0.4-0.2-0.7-0.2-0.8,0
+      c-0.4,0.7,2.2,1.7,1.3,3.3c-0.5,0.8-1.4,1-2.5,0.3C37,58.5,36.6,57.9,36.5,57.2z M42.8,59.4l1-2.8l1,0.4l-1,2.7
+      c-0.2,0.6,0,1.2,0.7,1.5s1.2-0.1,1.5-0.7l1-2.7l1,0.4l-1,2.8c-0.4,1.1-1.4,1.7-2.8,1.2C42.8,61.6,42.4,60.6,42.8,59.4z M53.8,63.9
+      l0.3-3.5l-1.7,3.4l-0.5,0l-1.1-3.7l-0.3,3.5l-1-0.1l0.4-4.9l1.5,0.1l0.9,3.2l1.5-3l1.5,0.1L54.9,64L53.8,63.9z M62.4,63.1l-0.6-3.5
+      L61,63.3l-0.4,0.1l-2-3.2l0.6,3.5l-1,0.2L57.3,59l1.4-0.3l1.7,2.8l0.6-3.2l1.4-0.3l0.9,4.8L62.4,63.1z M66.4,61.8l-1.8-4.6l1-0.4
+      l1.8,4.6L66.4,61.8z M71,59.6l-2.1-3.4l-1.2,0.7l-0.5-0.8l3.4-2l0.5,0.8l-1.2,0.7l2.1,3.4L71,59.6z M37.5,11.4l-2.9-3.9l1.8-1.4
+      c0.9-0.6,1.8-0.4,2.3,0.3C39.2,7,39.2,8,38.3,8.6l-1,0.8l1.1,1.4L37.5,11.4z M37.8,7c-0.2-0.3-0.7-0.3-1-0.1L36,7.6l0.8,1.1L37.7,8
+      C38,7.7,38.1,7.3,37.8,7z M44.9,6.9l-0.6-0.6l-1.9,0.9l0.1,0.9l-1.1,0.5L41,3.3l1.2-0.6L46,6.4L44.9,6.9z M42,4l0.2,2.2l1.4-0.7
+      L42,4z M50.3,5.4L49,3.9L48.2,4l0.4,1.7l-1,0.2l-1-4.8l2.2-0.5c1-0.2,1.8,0.3,2,1.2c0.2,0.8-0.3,1.4-0.8,1.7l1.5,1.6L50.3,5.4z
+       M49.7,2.1c-0.1-0.4-0.4-0.6-0.9-0.5l-1.1,0.2L48,3.1l1.1-0.2C49.5,2.8,49.8,2.5,49.7,2.1z M54.5,5l-0.1-4L53,1l0-0.9L56.9,0l0,0.9
+      l-1.4,0l0.1,4L54.5,5z M62.2,5.9l-1.6-3.6l-0.7,3.1l-1-0.2l1.1-4.8l1,0.2l1.6,3.5l0.7-3l1,0.2l-1.1,4.8L62.2,5.9z M65.2,6.8l2.1-4.4
+      l3.1,1.5L70,4.7l-2.2-1l-0.4,0.9l2.1,1l-0.4,0.8l-2.1-1l-0.5,1l2.2,1l-0.4,0.8L65.2,6.8z M72.2,11.1l0.3-2l-0.6-0.5L70.9,10L70,9.4
+      l3-3.9l1.8,1.4c0.8,0.6,0.9,1.5,0.3,2.3c-0.5,0.7-1.3,0.7-1.7,0.5l-0.3,2.2L72.2,11.1z M74.4,8.5c0.2-0.3,0.1-0.7-0.2-1l-0.9-0.7
+      l-0.8,1l0.9,0.7C73.7,8.8,74.1,8.8,74.4,8.5z M17.9,26.2h3.6v5.2h-3.6V26.2z M28.2,32c0-6.4,2.1-12.3,5.8-17H13.5l-13,15.9
+      c-0.6,0.7-0.6,1.7,0,2.4l13,15.6h21C30.6,44.3,28.2,38.5,28.2,32z M23.8,31.4c0,1.3-1,2.4-2.4,2.4h-3.6v6.7h-2.4V23.8h5.9
+      c1.3,0,2.4,1.1,2.4,2.4C23.8,26.2,23.8,31.4,23.8,31.4z M109.5,30.9L96.5,15H76c3.7,4.6,6,10.6,6,17c0,6.6-2.6,12.4-6.5,17h21
+      l13-15.6C110.1,32.7,110.1,31.6,109.5,30.9z M94.4,28.5H92v-2.4h-3.6v2.1l4.8,4.8c0.8,0.8,1.1,1.5,1.1,2.5v2.5
+      c0,1.3-1.1,2.4-2.4,2.4h-3.6c-1.3,0-2.4-1.1-2.4-2.4v-2.4h2.4v2.4H92v-2.8l-4.8-4.8c-0.8-0.8-1.1-1.5-1.1-2.5v-1.8
+      c0-1.3,1.1-2.4,2.4-2.4H92c1.3,0,2.4,1.1,2.4,2.4L94.4,28.5L94.4,28.5z"/>
+    </svg>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li class="active"><a href="/agenda.html">Agenda</a></li>
+        <li><a href="/locations.html">Locations</a></li>
+        <li><a href="/sponsors.html">Sponsors</a></li>
+      </ul>
+      <a href="https://www.eventbrite.com/e/appdirect-partner-summit-registration-and-payment-registration-11725975709" class="rsvp">
+        <span>RSVP Now</span>
+      </a>
+    </nav>
+  </header>
+
+  <script>
+    var ps14agendaApp = angular.module('ps14agendaApp', []);
+
+    ps14agendaApp.config(['$interpolateProvider', function($interpolateProvider) {
+      return $interpolateProvider.startSymbol('{(').endSymbol(')}');
+    }]);
+
+    ps14agendaApp.controller('AgendaCtrl', function($scope) {
+        // MAKE YOUR EDITS HERE
+        $scope.days = [{
+            'name': 'Day One',
+            'date': 'Tuesday, September 23rd',
+            'iconClass': 'day-one',
+            'events': [{
+                'title': 'Breakfast and Networking',
+                'time': '8:00-8:45AM',
+                'location': 'Julia Morgan Ballroom',
+                'presenter': {
+                    'name': '',
+                    'title': ''
+                },
+                'add_class': 'break'
+            }, {
+                'title': 'Welcome and Conference Opening',
+                'time': '8:45-9:00AM',
+                'location': 'Julia Morgan Ballroom',
+                'presenter': {
+                    'name': 'Richard Dufty',
+                    'title': 'Vice President of Worldwide Sales and Strategic Partnerships, AppDirect'
+                },
+                'add_class': ''
+            }, {
+                'title': 'Opening Keynote - Breaking Down Boundaries: The Cloud and the Future of Business',
+                'time': '9:00-10:00AM',
+                'location': 'Julia Morgan Ballroom',
+                'description': 'Daniel Saks, co-founder and co-CEO of AppDirect, will deliver the Summit’s opening keynote. In this wide-ranging talk, Saks will discuss the incredible growth of AppDirect’s cloud services ecosystem, including key trends that have shaped the company and the larger CSB industry as a whole. Saks will also invite special guests on stage to share their insights about this exciting and rapidly growing sector.',
+                'presenter': {
+                    'name': 'Daniel Saks',
+                    'title': 'President and CO-CEO, AppDirect'
+                },
+                'add_class': ''
+            }, {
+                'title': 'Industry Keynote - The Tech X Factor: Secrets of How Companies Transform Industries—and the World',
+                'time': '10:00-10:45AM',
+                'location': 'Julia Morgan Ballroom',
+                'description': 'In his role at Mithril, Ajay Royan has led investments for companies in Silicon Valley and around the world. He and his co-founder Peter Thiel—PayPal co-founder and first outside investor in Facebook—have consistently been on the front lines of technology innovation, helping to identify and grow exciting companies that are changing the way we work and communicate. Is there a formula for success? In this keynote, Royan will explore how to plan for sustainable, successful growth in the fast-moving tech and cloud sectors.',
+                'presenter': {
+                    'name': 'Ajay Royan',
+                    'title': 'Co-Founder and Managing General Partner, Mithril Capital Management'
+                },
+                'add_class': ''
+            }, {
+                'title': 'Morning Break',
+                'time': '10:45-11:10AM',
+                'location': 'Julia Morgan Ballroom',
+                'presenter': {
+                    'name': '',
+                    'title': ''
+                },
+                'add_class': 'break'
+            }, {
+                'title': 'Technology Keynote - Focus on Tech: Innovations That Will Drive the Next Generation of Business',
+                'time': '11:10-12:00PM',
+                'location': 'Julia Morgan Ballroom',
+                'description': 'Andy Sen, AppDirect’s head of technology, will map out the new, visionary features that the company will develop over the next 18 months. From greater automation and self-service tools, to game-changing functionality not offered by any other provider, Sen’s talk will cover developments that will open new opportunities and allow platform users to take their businesses in exciting new directions to drive user adoption and retention.',
+                'presenter': {
+                    'name': 'Andy Sen',
+                    'title': 'CTO, AppDirect'
+                },
+                'add_class': ''
+            }, {
+                'title': 'Lunch and Networking',
+                'time': '12:00-1:00PM',
+                'location': '',
+                'presenter': {
+                    'name': '',
+                    'title': ''
+                },
+                'add_class': 'break'
+            }]
+        }, {
+            'name': '',
+            'date': 'Afternoon theme: Insights from Marketplace Providers',
+            'iconClass': '',
+            'events': [{
+                'title': 'Introduction',
+                'time': '1:00-1:45PM',
+                'location': 'Julia Morgan Ballroom',
+                'description': '',
+                'presenter': {
+                    'name': 'Erez Yarkoni',
+                    'title': 'SVP and Head of Cloud',
+                  'second' : {
+                    'name' : 'Tim Otton',
+                    'title': 'General Manager of Cloud Strategy and Platforms, Telstra'
+                  },
+                },
+                'add_class': ''
+            }, {
+                'title': 'Panel One - Partners in the Hot Seat: Unfiltered insights from Marketplace Providers',
+                'time': '1:45-2:30PM',
+                'location': 'Julia Morgan Ballroom',
+                'description': 'At last year’s Summit, partners shared what has (and has not) delivered results in the CSB market. Does what worked then still work now? With an emphasis on driving collaboration for joint success across the industry, this session will give real, unfiltered insights into trends and future strategy across a diverse range of marketplaces.',
+                'presenter': {
+                    'name': '',
+                    'title': '',
+                    'panelist': 'Red Hat, Telstra, Deutsche Telekom, TeliaSonera'
+                },
+                'add_class': ''
+            }, {
+                'title': 'Afternoon Break',
+                'time': '2:30-3:00PM',
+                'location': '',
+                'presenter': {
+                    'name': '',
+                    'title': ''
+                },
+                'add_class': 'break'
+            }, {
+                'title': 'Breakout sessions',
+                'time': '3:00-3:30PM',
+                'location': 'Julia Morgan Ballroom',
+                'description': '',
+                'presenter': {
+                    'name': '',
+                    'title': ''
+                },
+                'add_class': ''
+            }, {
+                'title': 'full group discussion',
+                'time': '3:30-4:00PM',
+                'location': 'Julia Morgan Ballroom',
+                'description': '',
+                'presenter': {
+                    'name': '',
+                    'title': ''
+                },
+                'add_class': ''
+            }, {
+                'title': 'Closing Remarks and Wrap-up',
+                'time': '4:00-4:30PM',
+                'location': 'Julia Morgan Ballroom',
+                'presenter': {
+                    'name': 'Daniel Saks',
+                    'title': 'President and Co-CEO, AppDirect',
+                  'second' : {
+                    'name' : 'Richard Dufty',
+                    'title': 'Vice President of Worldwide Sales and Strategic Partnerships, AppDirect'
+                  },
+                },
+                'add_class': ''
+            }, {
+                'title': 'Gala Dinner',
+                'time': '6:30-10:30PM',
+                'location': 'La Mar Cebicheria Peruana',
+                'presenter': {
+                    'name': 'Business Casual Attire',
+                    'title': ''
+                },
+                'add_class': 'break'
+            }]
+        }, {
+            'name': 'Day Two',
+            'date': 'Wednesday, September 24th',
+            'iconClass': 'day-two',
+            'events': [{
+                'title': 'Breakfast and Networking',
+                'time': '8:30-9:15AM',
+                'location': 'Julia Morgan Ballroom',
+                'presenter': {
+                    'name': '',
+                    'title': ''
+                },
+                'add_class': ''
+            }]
+        }, {
+            'name': '',
+            'date': 'Morning theme: Developer Insights',
+            'iconClass': '',
+            'events': [{
+                'title': 'Welcome and day two Opening',
+                'time': '9:15-9:30AM',
+                'location': 'Julia Morgan Ballroom',
+                'presenter': {
+                    'name': 'Daniel Saks',
+                    'title': 'President and Co-CEO, AppDirect'
+                },
+                'add_class': ''
+            }, {
+                'title': 'Opening Ecosystems: Providers, Services and Developers',
+                'time': '9:30-9:45AM',
+                'location': 'Julia Morgan Ballroom',
+                'presenter': {
+                    'name': 'Paul Maritz',
+                    'title': 'CEO, Pivotal'
+                },
+                'add_class': ''
+            }, {
+                'title': 'Fireside Chat',
+                'time': '9:45-10:15AM',
+                'location': 'Julia Morgan Ballroom',
+                'presenter': {
+                    'name': 'Bruce Rogers',
+                    'title': 'Chief Insights Officer, Forbes',
+                  'second' : {
+                    'name' : 'Paul Maritz',
+                    'title': 'CEO, Pivotal'
+                  },
+                },
+                'add_class': ''
+            }, {
+                'title': 'Morning Break',
+                'time': '10:15-10:45AM',
+                'location': 'Julia Morgan Ballroom',
+                'presenter': {
+                    'name': '',
+                    'title': ''
+                },
+                'add_class': 'break'
+            }, {
+                'title': 'Main Event Sponsor Keynote',
+                'time': '10:45-11:30AM',
+                'location': 'Julia Morgan Ballroom',
+                'presenter': {
+                    'name': 'Mark Rice',
+                    'title': 'Senior Director, Syndication, Microsoft'
+                },
+                'add_class': ''
+            }, {
+                'title': 'Panel Two - Getting the Most out of Marketplaces: Developer Insights',
+                'time': '11:30-12:15pm',
+                'location': 'JULIA MORGAN BALLROOM',
+                'description': 'Often, a marketplace is only as good as the apps and other software products that it offers. However, attracting top ISVs to sell on marketplaces can be a challenge. What does it take to cultivate lasting business relationships with ISVs? This panel will explore key themes—such as ease of integration, marketing, promotions, etc.—that are essential to building a thriving ISV ecosystem. ',
+                'presenter': {
+                    'name': '',
+                    'title': '',
+                    'panelist': 'Microsoft, Docusign, Symantec, DigitalSafe, McAfee'
+                },
+                'add_class': ''
+            }, {
+                'title': 'Lunch and networking',
+                'time': '12:15-1:15pm',
+                'location': '',
+                'presenter': {
+                    'name': '',
+                    'title': ''
+                },
+                'add_class': 'break'
+            }]
+        }, {
+            'name': '',
+            'date': 'Afternoon theme: AppDirect Best Practices',
+            'iconClass': '',
+            'events': [{
+                'title': 'AppDirect Best Practices',
+                'time': '1:15-1:45PM',
+                'location': 'Julia Morgan Ballroom',
+                'presenter': {
+                    'name': 'Tim Pavlis',
+                    'title': 'VP Corporate Development, AppDirect'
+                },
+                'add_class': ''
+            }, {
+                'title': 'Best Practices Fireside Chat',
+                'time': '1:45-2:30PM',
+                'location': 'Julia Morgan Ballroom',
+                'presenter': {
+                    'name': 'Mark Rice',
+                    'title': 'Senior Director, Syndication, Microsoft ',
+                  'second' : {
+                    'name' : 'Tim Otton',
+                    'title': 'General Manager of Cloud Strategy and Platforms, Telstra'
+                  },
+                },
+                'add_class': ''
+            }, {
+                'title': 'Afternoon Break',
+                'time': '2:30-3:00PM',
+                'location': '',
+                'presenter': {
+                    'name': '',
+                    'title': ''
+                },
+                'add_class': 'break'
+            }, {
+                'title': 'Panel Three - Separating the BS from the BDPs: Marketplace Best Practices that Really Work',
+                'time': '3:00-4:00PM',
+                'location': 'Julia Morgan Ballroom',
+                'description': 'Everybody talks about best practices, but how do you tell nice-sounding strategies apart from approaches that deliver results? This panel will discuss real-world examples of what creates success for cloud marketplaces, including driving and converting traffic, assisted sales and bundling, and much more.',
+                'presenter': {
+                    'name': '',
+                    'title': '',
+                    'panelist': 'AT&T, Comcast, Swisscom, Pivotal'
+                },
+                'add_class': ''
+            }, {
+                'title': 'Wrap up discussion & Awards',
+                'time': '4:00-4:30PM',
+                'location': 'Julia Morgan Ballroom',
+                'description': '',
+                'presenter': {
+                    'name': 'Daniel Saks',
+                    'title': 'President and Co-CEO, AppDirect',
+                  'second' : {
+                    'name' : 'Richard Dufty',
+                    'title': 'Vice President of Worldwide Sales and Strategic Partnerships, AppDirect'
+                  },
+                },
+                'add_class': ''
+            }]
+        }, {
+            'name': 'Day Three',
+            'date': 'Thursday, September 25th',
+            'iconClass': 'day-three',
+            'events': [{
+                'title': '',
+                'time': 'All Day',
+                'location': 'AppDirect Headquarters, Floors 24, 25',
+                'description': "The entire third day of the event will be devoted to formal and informal networking sessions. The AppDirect team is inviting all guests to our San Francisco headquarters so that everyone has a chance to meet the channel partners and ISVs of their choosing. We will be using our building’s space to reserve meetings for attendees.",
+                'presenter': {
+                    'name': '',
+                    'title': ''
+                },
+                'add_class': ''
+            },{
+                'title': 'Partner Summit Closing Reception',
+                'time': '5:00-7:00PM',
+                'location': 'AppDirect Headquarters, Floors 24, 25',
+                'description': "Join us for drinks and food to close out the Partner Summit.",
+                'presenter': {
+                    'name': '',
+                    'title': ''
+                },
+                'add_class': 'break'
+            } ]
+        }];
+    });
+  </script>
+
+  <section class="main">
+    <div ng-repeat="day in days">
+      <div class="day-data">
+        <h2 class="day-name" ng-class="{'first-child' : $index == 0 }">{(day.name)}</h2>
+        <h3 class="day-date" ng-class="{'first-child' : $index == 0 }">{(day.date)}</h3>
+        <span class="icon {( day.iconClass )}"></span>
+      </div>
+      <div class="event-grid">
+
+        <div class="event {( event.add_class )}" ng-repeat="event in day.events" ng-class="{'last-child' : $index+1 == day.events.length }">
+
+          <div class="details">
+            <time>{( event.time )}</time>
+            <p class="address" ng-hide="event.location==''">{( event.location )}</p>
+          </div>
+          <div class="presentation">
+            <h4>{( event.title )}</h4>
+            <h5 class="presenter-name" ng-hide="event.presenter.name==''">{( event.presenter.name )}</h5>
+            <h6 class="presenter-title" ng-hide="event.presenter.title==''">{( event.presenter.title )}</h6>
+            <h6 class="panelist" ng-hide="event.presenter.panelist==''">{( event.presenter.panelist )}</h6>
+            <h5 class="presenter-name" ng-hide="event.presenter.second.name==''">{( event.presenter.second.name )}</h5>
+            <h6 class="presenter-title" ng-hide="event.presenter.second.title==''">{( event.presenter.second.title )}</h6>
+            <p class="description" ng-hide="event.description=='' || event.description == undefined">{( event.description)}</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<div class="legal">
+  <p>
+    Agenda material is subject to change and will be updated consistently as the event approaches.
+  </p>
+</div>
+
+
+<div class="full-width-wrapper footer">
+  <footer class="page-footer">
+    <a href="//www.appdirect.com" class="appdirect-logo">AppDirect</a>
+    <p class="span-2">
+      © 2014 AppDirect <br>
+      650 California Street <br>
+      San Francisco, CA 94108
+    </p>
+    <p class="span-2">
+      Contact Us <br>
+      <a rel="tel" href="tel:8774042777">877-404-2777 x000</a> <br>
+      <a href="mailto:partnersummit2014@appdirect.com">partnersummit2014@appdirect.com</a>
+    </p>
+    <a class="logo">AppDirect Partner Summit Logo</a>
+  </footer>
+</div>
+
+
+
+	
+
+	<!--[if lte IE 8]>
+		<script src="/static/js/vendor/respond.js"></script>
+	<![endif]-->
+	<script src="/static/js/vendor/plugins.js"></script>
+	<script src="/static/js/main.js"></script>
+	
+</body>
+</html>

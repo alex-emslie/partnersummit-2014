@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//www.marudot.com//iCal Event Maker
+X-WR-CALNAME:AppDirect Partner Summit 2014
+X-WR-TIMEZONE:Pacific/Pitcairn
+BEGIN:VEVENT
+DTSTAMP:20140520T155535Z
+UID:20140520T155535Z-1105198060@marudot.com
+DTSTART;VALUE=DATE:20140923
+DTEND;VALUE=DATE:20140926
+SUMMARY:AppDirect Partner Summit 2014
+DESCRIPTION:The second annual AppDirect Partner Summit is the premiere cloud service brokerage event in the industry. Look forward to an engaging experience with executive speakers\, workshops\, best practices\, and networking.
+LOCATION:465 California Street San Francisco\, CA 94104 & 650 California Street San Francisco\, CA 94104
+URL:http://ps14.appdirect.com
+END:VEVENT
+END:VCALENDAR
